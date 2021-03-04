@@ -28,7 +28,7 @@ p {
 }
 .quizcontainer #quiz1
 {
-text-shadow:1px 1px 2px orange;
+text-shadow:1px 1px 2px rgb(0, 119, 255);
 font-family:"Georgia", Arial, sans-serif;
 }
 .nextButton {
@@ -73,7 +73,7 @@ font-family:"Georgia", Arial, sans-serif;
     height: auto;
     margin: auto;
     border-radius: 6px;
-    background-color: #f3dc45;
+    background-color: #45f39c;
     text-align: center;
 }
 .quizMessage {

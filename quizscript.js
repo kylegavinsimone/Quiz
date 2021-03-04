@@ -18,22 +18,13 @@ var questions = [
     correctAnswer: 2,
   },
   {
-    question:
-      "3. How is your day going so far?",
-    choices: [ 
-    "Just kidding, I don't care", 
-    "Great",
-    "Aweful", 
-    ],
+    question: "3. How is your day going so far?",
+    choices: ["Just kidding, I don't care", "Great", "Aweful"],
     correctAnswer: 0,
   },
   {
     question: "4. What number comes after four?",
-    choices: [
-        "three", 
-        "seven", 
-        "five", 
-    ],
+    choices: ["three", "seven", "five"],
     correctAnswer: 2,
   },
 ];

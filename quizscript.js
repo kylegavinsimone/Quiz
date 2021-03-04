@@ -21,23 +21,24 @@ var questions = [
     title: "Why did I create this quiz?",
     choices: ["I always wanted to be a professional quiz maker",
      "I have a lot of free time on my hands",
-    "So I could learn coding and make fat stacks","],
-    answer: "So I could learn coding and make fat stacks,
+    "So I could learn coding and make fat stacks"],
+    answer: "So I could learn coding and make fat stacks",
   },
   {
-    title: "The condition in an if/else statement is enclosed within:---",
-    choices: ["quotes", "Curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
+    title: "What is the point of this quiz",
+    choices: ["There is no point",
+    "To learn how to cook",
+    "To flex my mad programming skills"],
+    answer: "To flex my mad programming skills",
   },
   {
-    title: "Arrays in JavaScript can be used to store:---",
+    title: "How is your day going so far?",
     choices: [
-      "numbers and strings",
-      "others Arrays",
-      "booleances",
-      "all of the above",
+        "Just kidding, I don't care",
+        "Great",
+        "Aweful",
     ],
-    answer: "all of the above",
+    answer: "Just kidding, I don't care",
   },
   {
     title:
@@ -145,33 +146,3 @@ function endgame() {
 }
 
 submitButton.addEventListener("click", showResults);
-
-const myQuestions = [
-  {
-    question: "Why did I create this quiz?",
-    answers: {
-      a: "I always wanted to be a professional quiz maker",
-      b: "I have a lot of free time on my hands",
-      c: "So I could learn coding and make fat stacks",
-    },
-    correctAnswer: "c",
-  },
-  {
-    question: "What is the point of this quiz?",
-    answers: {
-      a: "There is no point",
-      b: "To learn how to cook",
-      c: "To flex my mad programming skills",
-    },
-    correctAnswer: "c",
-  },
-  {
-    question: "How is your day going so far?",
-    answers: {
-      a: "Just kidding, I don't care",
-      b: "Great",
-      c: "Aweful",
-    },
-    correctAnswer: "a",
-  },
-];

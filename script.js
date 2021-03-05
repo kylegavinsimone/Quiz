@@ -34,10 +34,9 @@ var viewingAns = 0;
 var correctAnswers = 0;
 var quizOver = false;
 var iSelectedAnswer = [];
-var c = 180;
+var theTime = 180;
 var t;
 $(document).ready(function () {
-  // Display the first question
   displayCurrentQuestion();
   $(this).find(".quizMessage").hide();
   $(this).find(".preButton").attr("disabled", "disabled");
@@ -56,7 +55,7 @@ $(document).ready(function () {
           $(".preButton").attr("disabled", "disabled");
         }
 
-        currentQuestion--; // Since we have already displayed the first question on DOM ready
+        currentQuestion--;
         if (currentQuestion < questions.length) {
           displayCurrentQuestion();
         }
@@ -70,7 +69,6 @@ $(document).ready(function () {
       }
     });
 
-  // On clicking next, display the next question
   $(this)
     .find(".nextButton")
     .on("click", function () {
@@ -81,14 +79,13 @@ $(document).ready(function () {
           $(document).find(".quizMessage").text("Please select an answer");
           $(document).find(".quizMessage").show();
         } else {
-          // TODO: Remove any message -> not sure if this is efficient to call this each time....
           $(document).find(".quizMessage").hide();
           if (val == questions[currentQuestion].correctAnswer) {
             correctAnswers++;
           }
           iSelectedAnswer[currentQuestion] = val;
 
-          currentQuestion++; // Since we have already displayed the first question on DOM ready
+          currentQuestion++;
           if (currentQuestion >= 1) {
             $(".preButton").prop("disabled", false);
           }
@@ -100,7 +97,7 @@ $(document).ready(function () {
             $("#timer").html(
               "You scored: " + correctAnswers + " out of: " + questions.length
             );
-            c = 185;
+            theTime = 185;
             $(document).find(".preButton").text("View Answer");
             $(document).find(".nextButton").text("Play Again?");
             quizOver = true;
@@ -108,7 +105,6 @@ $(document).ready(function () {
           }
         }
       } else {
-        // quiz is over and clicked the next button (which now displays 'Play Again?'
         quizOver = false;
         $("#iTimeShow").html("Time Remaining:");
         iSelectedAnswer = [];
@@ -124,13 +120,13 @@ $(document).ready(function () {
 });
 
 function timedCount() {
-  if (c == 185) {
+  if (theTime == 185) {
     return false;
   }
 
-  var hours = parseInt(c / 3600) % 24;
-  var minutes = parseInt(c / 60) % 60;
-  var seconds = c % 60;
+  var hours = parseInt(theTime / 3600) % 24;
+  var minutes = parseInt(theTime / 60) % 60;
+  var seconds = theTime % 60;
   var result =
     (hours < 10 ? "0" + hours : hours) +
     ":" +
@@ -139,74 +135,38 @@ function timedCount() {
     (seconds < 10 ? "0" + seconds : seconds);
   $("#timer").html(result);
 
-  if (c == 0) {
+  if (theTime == 0) {
     displayScore();
     $("#iTimeShow").html("Quiz Time Completed!");
     $("#timer").html(
       "You scored: " + correctAnswers + " out of: " + questions.length
     );
-    c = 185;
-    $(document).find(".preButton").text("View Answer");
-    $(document).find(".nextButton").text("Play Again?");
+    theTime = 185;
+    $(document).find(".preButton").text("Review");
+    $(document).find(".nextButton").text("Try Again?");
     quizOver = true;
     return false;
   }
 
-  /*if(c == 0 )
-		{	
-			if (!quizOver) 
-			{
-				var val = $("input[type='radio']:checked").val();
-            	if (val == questions[currentQuestion].correctAnswer) 
-				{
-					correctAnswers++;
-				}
-				currentQuestion++; // Since we have already displayed the first question on DOM ready
-				
-				if (currentQuestion < questions.length) 
-				{
-					displayCurrentQuestion();
-					c=15;
-				} 
-				else 
-				{
-					displayScore();
-					$('#timer').html('');
-					c=16;
-					$(document).find(".nextButton").text("Play Again?");
-					quizOver = true;
-					return false;
-				}
-			}
-			else 
-			{ // quiz is over and clicked the next button (which now displays 'Play Again?'
-				quizOver = false;
-				$(document).find(".nextButton").text("Next Question");
-				resetQuiz();
-				displayCurrentQuestion();
-				hideScore();
-			}		
-		}	*/
-  c = c - 1;
+  theTime = theTime - 1;
   t = setTimeout(function () {
     timedCount();
   }, 1000);
 }
 
-// This displays the current question AND the choices
 function displayCurrentQuestion() {
-  if (c == 185) {
-    c = 180;
+  if (theTime == 185) {
+    theTime = 180;
     timedCount();
   }
-  //console.log("In display current Question");
+
   var question = questions[currentQuestion].question;
   var questionClass = $(document).find(".quizContainer > .question");
   var choiceList = $(document).find(".quizContainer > .choiceList");
   var numChoices = questions[currentQuestion].choices.length;
-  // Set the questionClass text to the current question
+
   $(questionClass).text(question);
-  // Remove all current <li> elements (if any)
+
   $(choiceList).find("li").remove();
   var choice;
 
@@ -252,7 +212,6 @@ function hideScore() {
   $(document).find(".result").hide();
 }
 
-// This displays the current question AND the choices
 function viewResults() {
   if (currentQuestion == 10) {
     currentQuestion = 0;
@@ -267,9 +226,9 @@ function viewResults() {
   var questionClass = $(document).find(".quizContainer > .question");
   var choiceList = $(document).find(".quizContainer > .choiceList");
   var numChoices = questions[currentQuestion].choices.length;
-  // Set the questionClass text to the current question
+
   $(questionClass).text(question);
-  // Remove all current <li> elements (if any)
+
   $(choiceList).find("li").remove();
   var choice;
 

@@ -1,12 +1,12 @@
 h1 {
-    font-family:'Gabriola', serif;
+    font-family:'Arial', serif;
     text-align: center;
 }
 ul {
     list-style: none;
 }
 li {
-    font-family:'Cambria', serif;
+    font-family:'Arial', serif;
     font-size: 1.5em;
 }
 input[type=radio] {
@@ -15,7 +15,7 @@ input[type=radio] {
     height: 2em;
 }
 p {
-    font-family:'Gabriola', serif;
+    font-family:'Arial', serif;
 }
 
  .quizContainer {
@@ -29,7 +29,7 @@ p {
 .quizcontainer #quiz1
 {
 text-shadow:1px 1px 2px rgb(0, 119, 255);
-font-family:"Georgia", Arial, sans-serif;
+font-family: "Arial", sans-serif;
 }
 .nextButton {
     box-shadow: 3px 3px 5px #888;
@@ -38,7 +38,7 @@ font-family:"Georgia", Arial, sans-serif;
     text-align: center;
     background-color: lightgrey;
     color: red;
-    font-family:'Gabriola', serif;
+    font-family:'Arial', serif;
     position: relative;
     margin: auto;
 	font-size:25px;
@@ -55,7 +55,7 @@ font-family:"Georgia", Arial, sans-serif;
     text-align: center;
     background-color: lightgrey;
     color: red;
-    font-family:'Gabriola', serif;
+    font-family:'Arial', serif;
     position: relative;
     margin: auto;
 	font-size:25px;
@@ -66,7 +66,7 @@ font-family:"Georgia", Arial, sans-serif;
 }
 
 .question {
-    font-family:'Century', serif;
+    font-family:'Arial', serif;
     font-size: 1.5em;
 	font-weight:bold;
     width: 100%;
@@ -85,7 +85,7 @@ font-family:"Georgia", Arial, sans-serif;
     padding: 5px;
 	font-size:20px;
 	font-weight:bold;
-    font-family:'Gabriola', serif;
+    font-family:'Arial', serif;
     color: red;
 	position:absolute;
 	top:80%;
@@ -106,7 +106,7 @@ font-family:"Georgia", Arial, sans-serif;
 	color:green;
     text-align: center;
 	font-size:25px;
-    font-family:'Verdana', serif;
+    font-family:'Arial', serif;
 	font-weight:bold;
 	position:absolute;
 	top:80%;
